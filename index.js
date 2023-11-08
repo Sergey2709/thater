@@ -24,8 +24,10 @@ function applyMatineeDiscount(cost, isMatinee) {
 function buyTicket() {
   const age = prompt("What is your age?");
   let cost = getBaseTicketCost(age);
-  const isMatinee = prompt("Are you attending a matinee show?").toLowerCase();
-  cost = applyMatineeDiscount(cost, isMatinee);
+  if (age && age >= 0) {
+    const isMatinee = prompt("Are you attending a matinee show?").toLowerCase();
+    cost = applyMatineeDiscount(cost, isMatinee);
 
-  alert("Your ticket will cost: $" + cost);
+    alert("Your ticket will cost: $" + cost);
+  }
 }
